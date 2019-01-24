@@ -39,6 +39,13 @@ require('scripts/conn.php');
     <div class="row">
       <div class="one-half column" style="margin-top: 5%">
         <h2>Al-Barrak Container Tracking Application</h2>
+        <h5>PATCH NOTES:</h5>
+          <ul>
+              <li><span style="color: green">Fixed</span> , Fetching multiple tables from DB </li>
+              <li><span style="color: green">Fixed</span> , Table View </li>
+              <li><span style="color: green">Fixed</span> , Array engine </li>
+              <li><span style="color: red">Issue</span> , Cannot select from all table because it is causing DB Engine to crash due to 300+ entries in all tables </li>
+          </ul>
         <h5>BL Number Search</h5>
         <p>Please enter the BL Number Here</p>
           <form action="#" method="post">
@@ -57,11 +64,11 @@ require('scripts/conn.php');
               </div>
               <input class="blueBleed" type="submit" value="Submit">
           </form>
-          <h5>Your Details</h5>
+          <h6>Your Details</h6>
           <p>Your Data will pop here</p>
           <?php
               echo "<table class='u-full-width' border='0'>\n";
-              echo "<thead> <tr> <th>BL NUMBER</th> <th>BLN ID</th> <th>CNTR NUM</th> </tr> </thead>\n";
+              echo "<thead> <tr> <th>BL NUMBER</th> <th>BRN ID</th> <th>CNTR NUM</th> <th>GROSS WEIGHT</th> <th>SEAL NUM</th> </tr> </thead>\n";
               while ($row = oci_fetch_array($sqlParse, OCI_ASSOC+OCI_RETURN_NULLS)) {
                   echo "<tr>\n";
                   foreach ($row as $item) {
